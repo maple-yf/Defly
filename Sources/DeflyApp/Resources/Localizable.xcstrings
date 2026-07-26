@@ -336,6 +336,138 @@
           }
         }
       }
+    },
+    "association.archive" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Archives" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "压缩归档" } }
+      }
+    },
+    "association.audio" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Audio" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "音频" } }
+      }
+    },
+    "association.gif" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "GIF Images" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "GIF 图像" } }
+      }
+    },
+    "association.heic" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "HEIC Images" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "HEIC 图像" } }
+      }
+    },
+    "association.html" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "HTML Documents" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "HTML 文档" } }
+      }
+    },
+    "association.http" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "HTTP Links" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "HTTP 链接" } }
+      }
+    },
+    "association.https" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "HTTPS Links" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "HTTPS 链接" } }
+      }
+    },
+    "association.jpeg" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "JPEG Images" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "JPEG 图像" } }
+      }
+    },
+    "association.mailto" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Email Links" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "邮件链接" } }
+      }
+    },
+    "association.markdown" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Markdown Documents" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "Markdown 文档" } }
+      }
+    },
+    "association.pdf" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "PDF Documents" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "PDF 文档" } }
+      }
+    },
+    "association.plainText" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Plain Text" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "纯文本文档" } }
+      }
+    },
+    "association.png" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "PNG Images" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "PNG 图像" } }
+      }
+    },
+    "association.tiff" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "TIFF Images" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "TIFF 图像" } }
+      }
+    },
+    "association.video" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Video" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "视频" } }
+      }
+    },
+    "overview.lastUpdated" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Assignments are up to date" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "默认关联已同步" } }
+      }
+    },
+    "overview.mixedApplications" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Multiple applications" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "多个应用" } }
+      }
+    },
+    "overview.notAssigned" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Not assigned" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "尚未设置" } }
+      }
+    },
+    "overview.refreshing" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Refreshing assignments…" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正在刷新默认关联…" } }
+      }
+    },
+    "smartGroup.browser" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Web Browser" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "网页浏览器" } }
+      }
+    },
+    "smartGroup.commonImages" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Common Images" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "常用图像" } }
+      }
+    },
+    "smartGroup.email" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Email" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "电子邮件" } }
+      }
     }
   },
   "version" : "1.0"
