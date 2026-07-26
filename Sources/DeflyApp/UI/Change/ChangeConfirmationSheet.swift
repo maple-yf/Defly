@@ -128,7 +128,14 @@ struct ChangeConfirmationSheet: View {
             Divider()
             footer
         }
-        .frame(width: 660, height: 620)
+        .frame(
+            minWidth: 620,
+            idealWidth: 660,
+            maxWidth: 760,
+            minHeight: 560,
+            idealHeight: 620,
+            maxHeight: 760
+        )
         .background(Color(nsColor: .windowBackgroundColor))
         .interactiveDismissDisabled(model.isApplying)
         .onDisappear {

@@ -7,6 +7,10 @@ final class PreferencesStoreTests: XCTestCase {
         let store = PreferencesStore(defaults: defaults)
 
         XCTAssertEqual(store.language, .simplifiedChinese)
+        XCTAssertEqual(
+            store.pinnedAssociationKeys,
+            PreferencesStore.defaultPinnedAssociationKeys
+        )
     }
 
     func testLanguageAndPinsPersist() {

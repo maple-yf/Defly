@@ -918,6 +918,54 @@
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Choose an Application" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "选择应用" } }
       }
+    },
+    "settings.about" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "About Defly" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "关于 Defly" } }
+      }
+    },
+    "settings.language.description" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Defly updates its interface immediately and remembers your choice." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "Defly 会立即更新界面并记住你的选择。" } }
+      }
+    },
+    "settings.openSourceDescription" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Defly is developed in the open and uses only public Apple APIs." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "Defly 以开源方式开发，并且只使用 Apple 公共 API。" } }
+      }
+    },
+    "settings.pinnedItems" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Pinned Overview Items" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "概览固定项目" } }
+      }
+    },
+    "settings.pinnedItems.description" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Choose the associations and smart groups shown in Overview." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "选择要在概览页显示的关联和智能组合。" } }
+      }
+    },
+    "settings.repository" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "View Source on GitHub" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "在 GitHub 查看源代码" } }
+      }
+    },
+    "settings.subtitle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Personalize Defly and review project information." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "自定义 Defly 并查看项目信息。" } }
+      }
+    },
+    "settings.version" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Version" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "版本" } }
+      }
     }
   },
   "version" : "1.0"

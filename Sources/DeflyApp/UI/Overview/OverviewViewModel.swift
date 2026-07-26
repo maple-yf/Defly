@@ -66,36 +66,31 @@ final class OverviewViewModel: ObservableObject {
         let descriptors = catalog.snapshot()
         let requestedKeys = preferences.pinnedAssociationKeys
 
-        if !requestedKeys.isEmpty {
-            return requestedKeys.compactMap { key in
-                descriptors.first { $0.id == key }
+        return requestedKeys.compactMap { key in
+            if let descriptor = descriptors.first(
+                where: { $0.id == key }
+            ) {
+                return makeDescriptorAssignment(descriptor)
             }
-            .map(makeDescriptorAssignment)
-        }
 
-        let defaults = [
-            "type:com.adobe.pdf",
-            "type:net.daringfireball.markdown"
-        ]
-        var assignments = defaults.compactMap { key in
-            descriptors.first { $0.id == key }
-        }
-        .map(makeDescriptorAssignment)
-
-        if let images = BuiltInAssociationCatalog.smartGroups.first(
-            where: { $0.id == "commonImages" }
-        ) {
-            assignments.append(
-                makeAssignment(
-                    id: "smart:\(images.id)",
-                    titleKey: images.localizationKey,
-                    symbolName: "photo.on.rectangle.angled",
-                    associations: images.associations
-                )
+            guard key.hasPrefix("smart:"),
+                  let group =
+                    BuiltInAssociationCatalog.smartGroups.first(
+                        where: { "smart:\($0.id)" == key }
+                    ) else {
+                return nil
+            }
+            return makeAssignment(
+                id: key,
+                titleKey: group.localizationKey,
+                symbolName: group.id == "commonImages"
+                    ? "photo.on.rectangle.angled"
+                    : group.id == "browser"
+                        ? "safari"
+                        : "envelope",
+                associations: group.associations
             )
         }
-
-        return assignments
     }
 
     private func makeDescriptorAssignment(

@@ -1,5 +1,6 @@
 import XCTest
 
+@MainActor
 final class DeflyUITests: XCTestCase {
     func testFirstLaunchIsChineseAndShowsFiveDestinations() {
         let app = XCUIApplication()
@@ -59,6 +60,33 @@ final class DeflyUITests: XCTestCase {
         XCTAssertTrue(
             sheet.buttons["重试失败项"].waitForExistence(
                 timeout: 3
+            )
+        )
+    }
+
+    func testEnglishPersistsAcrossRelaunch() {
+        let app = XCUIApplication()
+        app.launchArguments = [
+            "-ui-testing",
+            "-reset-preferences"
+        ]
+        app.launch()
+
+        app.staticTexts["设置"].click()
+        app.popUpButtons["语言"].click()
+        app.menuItems["English"].click()
+        XCTAssertTrue(
+            app.staticTexts["Overview"].waitForExistence(
+                timeout: 2
+            )
+        )
+
+        app.terminate()
+        app.launchArguments = ["-ui-testing"]
+        app.launch()
+        XCTAssertTrue(
+            app.staticTexts["Overview"].waitForExistence(
+                timeout: 2
             )
         )
     }

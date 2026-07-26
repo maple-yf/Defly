@@ -154,7 +154,10 @@ struct AppShellView: View {
                 onRequestChanges: requestChanges
             )
         case .settings:
-            PlaceholderDestinationView(destination: selection)
+            SettingsView(
+                container: container,
+                catalog: container.catalog
+            )
         }
     }
 
@@ -175,26 +178,5 @@ struct AppShellView: View {
             return
         }
         pendingPlan = plan
-    }
-}
-
-private struct PlaceholderDestinationView: View {
-    let destination: SidebarDestination
-
-    var body: some View {
-        VStack(spacing: 14) {
-            Image(systemName: destination.symbolName)
-                .font(.system(size: 36, weight: .regular))
-                .foregroundStyle(.secondary)
-                .accessibilityHidden(true)
-
-            Text(LocalizedStringKey(destination.localizationKey))
-                .font(.title2.weight(.semibold))
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(nsColor: .windowBackgroundColor))
-        .navigationTitle(
-            Text(LocalizedStringKey(destination.localizationKey))
-        )
     }
 }

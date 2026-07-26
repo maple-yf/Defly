@@ -5,6 +5,7 @@ import SwiftUI
 @MainActor
 final class AppContainer: ObservableObject {
     @Published private(set) var language: AppLanguage
+    @Published private(set) var pinnedAssociationKeys: [String]
 
     let workspace: any WorkspaceClient
     let catalog: AssociationCatalog
@@ -30,6 +31,7 @@ final class AppContainer: ObservableObject {
         let preferences = PreferencesStore(defaults: defaults)
         self.preferences = preferences
         language = preferences.language
+        pinnedAssociationKeys = preferences.pinnedAssociationKeys
         catalog = AssociationCatalog(
             seed: BuiltInAssociationCatalog.descriptors
         )
@@ -55,6 +57,18 @@ final class AppContainer: ObservableObject {
     func setLanguage(_ language: AppLanguage) {
         preferences.language = language
         self.language = language
+    }
+
+    func setPinned(_ key: String, isPinned: Bool) {
+        var keys = Set(pinnedAssociationKeys)
+        if isPinned {
+            keys.insert(key)
+        } else {
+            keys.remove(key)
+        }
+        let sortedKeys = keys.sorted()
+        preferences.pinnedAssociationKeys = sortedKeys
+        pinnedAssociationKeys = sortedKeys
     }
 
     func applications() async -> [InstalledApplication] {

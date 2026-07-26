@@ -208,7 +208,7 @@ private struct AssignmentCardView: View {
                 }
             }
         }
-        .accessibilityElement(children: .combine)
+        .accessibilityElement(children: .contain)
         .accessibilityIdentifier("overview.card.\(assignment.id)")
     }
 
@@ -233,6 +233,7 @@ private struct AssignmentCardView: View {
                     .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
+                .padding(.vertical, 5)
             }
         }
         .padding(16)
