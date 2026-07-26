@@ -66,3 +66,7 @@ fastlane/test_output
 
 # Local implementation worktrees
 .worktrees/
+
+# Generated project and local build products
+Defly.xcodeproj/
+DerivedData/
