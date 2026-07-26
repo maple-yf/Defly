@@ -63,3 +63,6 @@ fastlane/test_output
 
 # Local visual brainstorming artifacts
 .superpowers/
+
+# Local implementation worktrees
+.worktrees/
