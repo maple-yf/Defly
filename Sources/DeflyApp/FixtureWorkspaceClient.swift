@@ -5,6 +5,7 @@ import Foundation
 final class FixtureWorkspaceClient: WorkspaceClient {
     private var defaults: [AssociationID: HandlerApplication]
     private let candidates: [HandlerApplication]
+    private var failOnce: Set<AssociationID>
     let installedApplications: [InstalledApplication]
 
     init(arguments: [String] = []) {
@@ -34,6 +35,9 @@ final class FixtureWorkspaceClient: WorkspaceClient {
         )
 
         candidates = [safari, preview, arc]
+        failOnce = arguments.contains("-fixture-partial-failure")
+            ? [.urlScheme("http")]
+            : []
         installedApplications = [
             InstalledApplication(
                 url: safari.applicationURL,
@@ -96,6 +100,17 @@ final class FixtureWorkspaceClient: WorkspaceClient {
         _ application: HandlerApplication,
         for association: AssociationID
     ) async throws {
+        if failOnce.remove(association) != nil {
+            throw FixtureWorkspaceError.simulatedUserDenial
+        }
         defaults[association] = application
+    }
+}
+
+private enum FixtureWorkspaceError: LocalizedError {
+    case simulatedUserDenial
+
+    var errorDescription: String? {
+        "Simulated macOS consent denial"
     }
 }

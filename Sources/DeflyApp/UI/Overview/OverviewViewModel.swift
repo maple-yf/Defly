@@ -17,6 +17,7 @@ final class OverviewViewModel: ObservableObject {
         let associations: [AssociationID]
         let tags: [String]
         let handlerState: HandlerState
+        let candidates: [HandlerApplication]
     }
 
     @Published private(set) var commonGroups: [Assignment] = []
@@ -136,7 +137,10 @@ final class OverviewViewModel: ObservableObject {
             symbolName: symbolName,
             associations: associations,
             tags: makeTags(for: associations),
-            handlerState: handlerState
+            handlerState: handlerState,
+            candidates: compatibleCandidates(
+                for: associations
+            )
         )
     }
 
@@ -184,5 +188,36 @@ final class OverviewViewModel: ObservableObject {
         case .archive:
             "archivebox"
         }
+    }
+
+    private func compatibleCandidates(
+        for associations: [AssociationID]
+    ) -> [HandlerApplication] {
+        let candidateLists = associations.map {
+            workspace.candidateApplications(for: $0)
+        }
+        guard let first = candidateLists.first else {
+            return []
+        }
+
+        let commonIDs = candidateLists.dropFirst().reduce(
+            Set(first.map(\.stableID))
+        ) { result, applications in
+            result.intersection(applications.map(\.stableID))
+        }
+        let candidatesByID = Dictionary(
+            candidateLists
+                .flatMap { $0 }
+                .map { ($0.stableID, $0) },
+            uniquingKeysWith: { current, _ in current }
+        )
+
+        return commonIDs
+            .compactMap { candidatesByID[$0] }
+            .sorted {
+                $0.displayName.localizedStandardCompare(
+                    $1.displayName
+                ) == .orderedAscending
+            }
     }
 }

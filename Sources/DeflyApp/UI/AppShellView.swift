@@ -1,3 +1,4 @@
+import DeflyCore
 import SwiftUI
 
 enum SidebarDestination: String, CaseIterable, Identifiable {
@@ -45,6 +46,9 @@ enum SidebarDestination: String, CaseIterable, Identifiable {
 struct AppShellView: View {
     @ObservedObject var container: AppContainer
     @State private var selection = SidebarDestination.overview
+    @State private var pendingPlan: ChangePlan?
+    @State private var refreshID = UUID()
+    @State private var showsNoChangesAlert = false
 
     var body: some View {
         NavigationSplitView {
@@ -73,8 +77,29 @@ struct AppShellView: View {
             )
         } detail: {
             destinationView
+                .id(refreshID)
         }
         .tint(.blue)
+        .sheet(item: $pendingPlan) { plan in
+            ChangeConfirmationSheet(
+                plan: plan,
+                executor: ChangeExecutor(
+                    workspace: container.workspace
+                ),
+                catalog: container.catalog,
+                onRefresh: {
+                    refreshID = UUID()
+                }
+            )
+        }
+        .alert(
+            "change.noChanges.title",
+            isPresented: $showsNoChangesAlert
+        ) {
+            Button("change.complete", role: .cancel) {}
+        } message: {
+            Text("change.noChanges.message")
+        }
     }
 
     @ViewBuilder
@@ -84,7 +109,8 @@ struct AppShellView: View {
             OverviewView(
                 workspace: container.workspace,
                 catalog: container.catalog,
-                preferences: container.preferencesStore
+                preferences: container.preferencesStore,
+                onRequestChanges: requestChanges
             )
         case .fileTypes:
             ExplorerView(
@@ -94,6 +120,12 @@ struct AppShellView: View {
                 preferences: container.preferencesStore,
                 applicationLoader: {
                     await container.applications()
+                },
+                onRequestChange: { descriptor, application in
+                    requestChanges(
+                        [descriptor.association],
+                        application
+                    )
                 }
             )
         case .urlSchemes:
@@ -104,6 +136,12 @@ struct AppShellView: View {
                 preferences: container.preferencesStore,
                 applicationLoader: {
                     await container.applications()
+                },
+                onRequestChange: { descriptor, application in
+                    requestChanges(
+                        [descriptor.association],
+                        application
+                    )
                 }
             )
         case .applications:
@@ -112,11 +150,31 @@ struct AppShellView: View {
                 catalog: container.catalog,
                 applicationLoader: {
                     await container.applications()
-                }
+                },
+                onRequestChanges: requestChanges
             )
         case .settings:
             PlaceholderDestinationView(destination: selection)
         }
+    }
+
+    private func requestChanges(
+        _ associations: [AssociationID],
+        _ application: HandlerApplication
+    ) {
+        let plan = ChangePlanner(
+            workspace: container.workspace
+        )
+        .makePlan(
+            associations: associations,
+            target: application
+        )
+
+        guard !plan.changes.isEmpty else {
+            showsNoChangesAlert = true
+            return
+        }
+        pendingPlan = plan
     }
 }
 

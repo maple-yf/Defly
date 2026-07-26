@@ -9,7 +9,7 @@ public final class ChangeExecutor {
     }
 
     public func execute(_ plan: ChangePlan) async -> ChangeReport {
-        var results: [ChangeItemResult] = []
+        var errorsByChangeID: [String: String] = [:]
 
         for change in plan.changes {
             do {
@@ -17,29 +17,33 @@ public final class ChangeExecutor {
                     change.targetHandler,
                     for: change.association
                 )
-                let actual = workspace.defaultApplication(
-                    for: change.association
-                )
-                let status: ChangeItemResult.Status =
-                    actual?.stableID == change.targetHandler.stableID
-                    ? .verified
-                    : .notApplied
-                results.append(
-                    ChangeItemResult(
-                        change: change,
-                        status: status,
-                        errorDescription: nil
-                    )
-                )
             } catch {
-                results.append(
-                    ChangeItemResult(
-                        change: change,
-                        status: .failed,
-                        errorDescription: String(describing: error)
-                    )
+                errorsByChangeID[change.id] = String(
+                    describing: error
                 )
             }
+        }
+
+        let results = plan.changes.map { change in
+            let actual = workspace.defaultApplication(
+                for: change.association
+            )
+            let errorDescription = errorsByChangeID[change.id]
+            let status: ChangeItemResult.Status
+
+            if actual?.stableID == change.targetHandler.stableID {
+                status = .verified
+            } else if errorDescription != nil {
+                status = .failed
+            } else {
+                status = .notApplied
+            }
+
+            return ChangeItemResult(
+                change: change,
+                status: status,
+                errorDescription: errorDescription
+            )
         }
 
         return ChangeReport(sourcePlan: plan, results: results)

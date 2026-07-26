@@ -34,5 +34,11 @@ final class ChangeExecutorTests: XCTestCase {
             report.retryPlan().changes.map(\.association),
             [http]
         )
+        XCTAssertEqual(workspace.events, [
+            "set:scheme:http",
+            "set:scheme:https",
+            "read:scheme:http",
+            "read:scheme:https"
+        ])
     }
 }

@@ -26,11 +26,13 @@ final class FakeWorkspaceClient: WorkspaceClient {
     var defaults: [AssociationID: HandlerApplication] = [:]
     var candidates: [AssociationID: [HandlerApplication]] = [:]
     var setErrors: [AssociationID: Error] = [:]
+    var events: [String] = []
 
     func defaultApplication(
         for association: AssociationID
     ) -> HandlerApplication? {
-        defaults[association]
+        events.append("read:\(association.stableKey)")
+        return defaults[association]
     }
 
     func candidateApplications(
@@ -43,6 +45,7 @@ final class FakeWorkspaceClient: WorkspaceClient {
         _ application: HandlerApplication,
         for association: AssociationID
     ) async throws {
+        events.append("set:\(association.stableKey)")
         if let error = setErrors[association] {
             throw error
         }

@@ -3,11 +3,18 @@ import SwiftUI
 
 struct OverviewView: View {
     @StateObject private var viewModel: OverviewViewModel
+    private let onRequestChanges:
+        ([AssociationID], HandlerApplication) -> Void
 
     init(
         workspace: any WorkspaceClient,
         catalog: AssociationCatalog,
-        preferences: PreferencesStore
+        preferences: PreferencesStore,
+        onRequestChanges: @escaping
+            ([AssociationID], HandlerApplication) -> Void = {
+                _,
+                _ in
+            }
     ) {
         _viewModel = StateObject(
             wrappedValue: OverviewViewModel(
@@ -16,6 +23,7 @@ struct OverviewView: View {
                 preferences: preferences
             )
         )
+        self.onRequestChanges = onRequestChanges
     }
 
     var body: some View {
@@ -103,7 +111,15 @@ struct OverviewView: View {
                 spacing: 16
             ) {
                 ForEach(assignments) { assignment in
-                    AssignmentCardView(assignment: assignment)
+                    AssignmentCardView(
+                        assignment: assignment,
+                        requestChange: { application in
+                            onRequestChanges(
+                                assignment.associations,
+                                application
+                            )
+                        }
+                    )
                 }
             }
         }
@@ -111,7 +127,10 @@ struct OverviewView: View {
 }
 
 private struct AssignmentCardView: View {
+    @State private var showsCandidatePicker = false
+
     let assignment: OverviewViewModel.Assignment
+    let requestChange: (HandlerApplication) -> Void
 
     var body: some View {
         GlassCard {
@@ -170,10 +189,54 @@ private struct AssignmentCardView: View {
                             .foregroundStyle(.secondary)
                     }
                 }
+
+                Button {
+                    showsCandidatePicker = true
+                } label: {
+                    Label(
+                        "overview.changeDefaultApplication",
+                        systemImage: "arrow.triangle.2.circlepath"
+                    )
+                }
+                .buttonStyle(.bordered)
+                .disabled(assignment.candidates.isEmpty)
+                .popover(
+                    isPresented: $showsCandidatePicker,
+                    arrowEdge: .bottom
+                ) {
+                    candidatePicker
+                }
             }
         }
         .accessibilityElement(children: .combine)
         .accessibilityIdentifier("overview.card.\(assignment.id)")
+    }
+
+    private var candidatePicker: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("overview.chooseApplication")
+                .font(.headline)
+
+            ForEach(assignment.candidates) { application in
+                Button {
+                    showsCandidatePicker = false
+                    requestChange(application)
+                } label: {
+                    HStack(spacing: 10) {
+                        ApplicationIconView(
+                            application: application,
+                            size: 30
+                        )
+                        Text(application.displayName)
+                        Spacer(minLength: 16)
+                    }
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+            }
+        }
+        .padding(16)
+        .frame(minWidth: 230)
     }
 
     private var representedApplication: HandlerApplication? {

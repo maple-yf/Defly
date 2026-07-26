@@ -732,6 +732,192 @@
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Review URL schemes and the applications that can open them." } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "查看 URL 协议及可以打开它们的应用。" } }
       }
+    },
+    "change.applyingProgress" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Applying each change in order and verifying the system result…" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正在依次应用每项更改并回读系统结果…" } }
+      }
+    },
+    "change.applyingSubtitle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Keep this sheet open while macOS processes the changes." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "macOS 处理更改期间请保持此窗口打开。" } }
+      }
+    },
+    "change.applyingTitle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Applying Default Application Changes" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正在更改默认应用" } }
+      }
+    },
+    "change.atomicChanges" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "System Changes" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "系统原子更改" } }
+      }
+    },
+    "change.compatibilityWarning.message" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "macOS does not list the selected application as compatible with every item. The application may not open some content correctly." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "macOS 未将所选应用列为每一项的兼容应用，部分内容可能无法正确打开。" } }
+      }
+    },
+    "change.compatibilityWarning.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Compatibility Cannot Be Confirmed" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无法确认兼容性" } }
+      }
+    },
+    "change.confirmAction" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Confirm Changes" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "确认更改" } }
+      }
+    },
+    "change.confirmSubtitle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Review every system association before Defly writes changes." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "Defly 写入前，请检查每一项系统关联。" } }
+      }
+    },
+    "change.confirmTitle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Change Default Applications?" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "确认更改默认应用？" } }
+      }
+    },
+    "change.copyDiagnostics" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Copy Diagnostics" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "复制诊断信息" } }
+      }
+    },
+    "change.explanatoryTags" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Includes" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "说明标签" } }
+      }
+    },
+    "change.multipleApplications" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Multiple Applications" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "多个应用" } }
+      }
+    },
+    "change.noChanges.message" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "The selected application already handles every requested association." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "所选应用已经是这些关联的默认应用。" } }
+      }
+    },
+    "change.noChanges.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No Changes Needed" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无需更改" } }
+      }
+    },
+    "change.noPreviousApplication" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No Current Application" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无当前应用" } }
+      }
+    },
+    "change.noTargetApplication" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No Target Application" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无目标应用" } }
+      }
+    },
+    "change.partialSubtitle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Successful items were kept. Retry only the failed or unverified items." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "成功项已保留；可以只重试失败或未生效项。" } }
+      }
+    },
+    "change.partialTitle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Some Changes Need Attention" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "部分更改需要处理" } }
+      }
+    },
+    "change.pleaseWait" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Please wait…" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "请稍候…" } }
+      }
+    },
+    "change.status.applying" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Applying" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正在应用" } }
+      }
+    },
+    "change.status.failed" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Failed" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "失败" } }
+      }
+    },
+    "change.status.notApplied" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Not Applied" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "未生效" } }
+      }
+    },
+    "change.status.pending" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Pending" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "待确认" } }
+      }
+    },
+    "change.status.verified" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Verified" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已验证" } }
+      }
+    },
+    "change.successSubtitle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "macOS now reports the selected application for every requested association." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "macOS 已回报每一项关联均使用所选应用。" } }
+      }
+    },
+    "change.successTitle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Default Applications Updated" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "默认应用已更新" } }
+      }
+    },
+    "change.systemConsent.message" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "macOS may show an additional system consent prompt. Declining it will leave that item unchanged." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "macOS 可能追加系统同意提示；拒绝后对应项目会保持不变。" } }
+      }
+    },
+    "change.systemConsent.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "macOS May Ask for Confirmation" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "macOS 可能要求再次确认" } }
+      }
+    },
+    "change.transitionAccessibility" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Changes from current applications to the selected application" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "从当前应用更改为所选应用" } }
+      }
+    },
+    "overview.changeDefaultApplication" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Change Default Application" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "更改默认应用" } }
+      }
+    },
+    "overview.chooseApplication" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Choose an Application" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "选择应用" } }
+      }
     }
   },
   "version" : "1.0"

@@ -33,4 +33,33 @@ final class DeflyUITests: XCTestCase {
             )
         )
     }
+
+    func testChangeRequiresConfirmationAndRetriesOnlyFailure() {
+        let app = XCUIApplication()
+        app.launchArguments = [
+            "-ui-testing",
+            "-use-fixtures",
+            "-fixture-partial-failure"
+        ]
+        app.launch()
+
+        app.buttons["更改默认应用"].firstMatch.click()
+        app.buttons["Arc"].click()
+
+        let sheet = app.sheets.firstMatch
+        XCTAssertTrue(
+            sheet.staticTexts["确认更改默认应用？"]
+                .waitForExistence(timeout: 3)
+        )
+        XCTAssertTrue(sheet.staticTexts["http"].exists)
+        XCTAssertTrue(sheet.staticTexts["https"].exists)
+        XCTAssertTrue(sheet.staticTexts[".html"].exists)
+
+        sheet.buttons["确认更改"].click()
+        XCTAssertTrue(
+            sheet.buttons["重试失败项"].waitForExistence(
+                timeout: 3
+            )
+        )
+    }
 }
