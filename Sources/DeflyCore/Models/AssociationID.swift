@@ -36,4 +36,12 @@ public enum AssociationID: Hashable, Codable, Sendable {
             "scheme:\(scheme)"
         }
     }
+
+    public var representativeURL: URL? {
+        guard case .urlScheme(let scheme) = self else {
+            return nil
+        }
+
+        return URL(string: "\(scheme):")
+    }
 }
