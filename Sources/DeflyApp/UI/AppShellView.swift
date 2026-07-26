@@ -86,7 +86,35 @@ struct AppShellView: View {
                 catalog: container.catalog,
                 preferences: container.preferencesStore
             )
-        case .fileTypes, .urlSchemes, .applications, .settings:
+        case .fileTypes:
+            ExplorerView(
+                mode: .contentTypes,
+                catalog: container.catalog,
+                workspace: container.workspace,
+                preferences: container.preferencesStore,
+                applicationLoader: {
+                    await container.applications()
+                }
+            )
+        case .urlSchemes:
+            ExplorerView(
+                mode: .urlSchemes,
+                catalog: container.catalog,
+                workspace: container.workspace,
+                preferences: container.preferencesStore,
+                applicationLoader: {
+                    await container.applications()
+                }
+            )
+        case .applications:
+            ApplicationsView(
+                workspace: container.workspace,
+                catalog: container.catalog,
+                applicationLoader: {
+                    await container.applications()
+                }
+            )
+        case .settings:
             PlaceholderDestinationView(destination: selection)
         }
     }

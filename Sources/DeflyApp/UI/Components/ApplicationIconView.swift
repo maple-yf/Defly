@@ -3,15 +3,31 @@ import DeflyCore
 import SwiftUI
 
 struct ApplicationIconView: View {
-    let application: HandlerApplication?
+    private let applicationURL: URL?
     var size: CGFloat = 44
+
+    init(
+        application: HandlerApplication?,
+        size: CGFloat = 44
+    ) {
+        applicationURL = application?.applicationURL
+        self.size = size
+    }
+
+    init(
+        installedApplication: InstalledApplication?,
+        size: CGFloat = 44
+    ) {
+        applicationURL = installedApplication?.url
+        self.size = size
+    }
 
     var body: some View {
         Group {
-            if let application {
+            if let applicationURL {
                 Image(
                     nsImage: NSWorkspace.shared.icon(
-                        forFile: application.applicationURL.path
+                        forFile: applicationURL.path
                     )
                 )
                 .resizable()

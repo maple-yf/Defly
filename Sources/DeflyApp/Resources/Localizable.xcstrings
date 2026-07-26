@@ -468,6 +468,270 @@
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Email" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "电子邮件" } }
       }
+    },
+    "action.chooseOtherApplication" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Choose Other Application…" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "选择其他应用…" } }
+      }
+    },
+    "action.setDefault" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Set as Default" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "设为默认" } }
+      }
+    },
+    "applications.contentTypes" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "File Types" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "文件类型" } }
+      }
+    },
+    "applications.currentlyAssigned" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Current default" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "当前默认" } }
+      }
+    },
+    "applications.declaredAssociations" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Declared Associations" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "应用声明的关联" } }
+      }
+    },
+    "applications.loading" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Discovering applications…" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正在发现应用…" } }
+      }
+    },
+    "applications.missingBundleIdentifier" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No Bundle Identifier" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无 Bundle Identifier" } }
+      }
+    },
+    "applications.noDeclaredAssociations" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "This application declares no discoverable associations." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "此应用未声明可发现的关联。" } }
+      }
+    },
+    "applications.noSelection" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Select an Application" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "选择一个应用" } }
+      }
+    },
+    "applications.noSelection.description" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Review the file types and URL schemes declared by an installed app." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "查看已安装应用声明的文件类型和 URL 协议。" } }
+      }
+    },
+    "applications.reviewSelection" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Review Changes" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "检查更改" } }
+      }
+    },
+    "applications.searchPrompt" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Search apps or Bundle IDs" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "搜索应用或 Bundle ID" } }
+      }
+    },
+    "applications.subtitle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Inspect the associations declared by installed applications." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "从已安装应用的角度检查默认关联。" } }
+      }
+    },
+    "applications.urlSchemes" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "URL Schemes" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "URL 协议" } }
+      }
+    },
+    "category.archive" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Archives" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "归档" } }
+      }
+    },
+    "category.communication" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Communication" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "通讯" } }
+      }
+    },
+    "category.development" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Development" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "开发" } }
+      }
+    },
+    "category.document" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Documents" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "文档" } }
+      }
+    },
+    "category.image" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Images" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "图像" } }
+      }
+    },
+    "category.media" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Media" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "影音" } }
+      }
+    },
+    "category.web" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Web" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "网页" } }
+      }
+    },
+    "explorer.chooseOther.message" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Choose a macOS application. Defly will show a warning if the system does not list it as compatible." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "选择一个 macOS 应用。如果系统未将其列为兼容应用，Defly 会在确认前提示。" } }
+      }
+    },
+    "explorer.chooseOther.warning" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Other applications may not declare support for this association." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "其他应用可能未声明支持此关联。" } }
+      }
+    },
+    "explorer.compatibleApplications" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Compatible Applications" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "兼容应用" } }
+      }
+    },
+    "explorer.currentBadge" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Current" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "当前" } }
+      }
+    },
+    "explorer.currentDefault" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Current Default Application" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "当前默认应用" } }
+      }
+    },
+    "explorer.discovering" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Discovering declared associations" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正在发现应用关联" } }
+      }
+    },
+    "explorer.extensions" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Extensions" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "扩展名" } }
+      }
+    },
+    "explorer.fileTypes.subtitle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Search by UTType, extension, MIME type, or localized name." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "按 UTType、扩展名、MIME 类型或本地化名称搜索。" } }
+      }
+    },
+    "explorer.filter.all" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "All" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "全部" } }
+      }
+    },
+    "explorer.filter.common" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Common" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "常用" } }
+      }
+    },
+    "explorer.filter.label" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Filter" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "筛选" } }
+      }
+    },
+    "explorer.filter.pinned" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Pinned" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已固定" } }
+      }
+    },
+    "explorer.filter.unassigned" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No Default" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无默认应用" } }
+      }
+    },
+    "explorer.identifier" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Identifier" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "标识符" } }
+      }
+    },
+    "explorer.metadata" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Metadata" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "元数据" } }
+      }
+    },
+    "explorer.mimeTypes" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "MIME Types" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "MIME 类型" } }
+      }
+    },
+    "explorer.noCandidates" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "macOS did not report a compatible application." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "macOS 未返回兼容应用。" } }
+      }
+    },
+    "explorer.noDefault" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No default application is assigned." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "尚未设置默认应用。" } }
+      }
+    },
+    "explorer.none" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "None" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无" } }
+      }
+    },
+    "explorer.noSelection" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Select an Association" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "选择一个关联" } }
+      }
+    },
+    "explorer.noSelection.description" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Select an item to inspect its metadata and compatible applications." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "选择列表项以检查元数据和兼容应用。" } }
+      }
+    },
+    "explorer.searchPrompt" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Search identifier, extension, MIME, or app" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "搜索标识符、扩展名、MIME 或应用" } }
+      }
+    },
+    "explorer.urlSchemes.subtitle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Review URL schemes and the applications that can open them." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "查看 URL 协议及可以打开它们的应用。" } }
+      }
     }
   },
   "version" : "1.0"

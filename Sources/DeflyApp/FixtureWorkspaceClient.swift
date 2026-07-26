@@ -5,6 +5,7 @@ import Foundation
 final class FixtureWorkspaceClient: WorkspaceClient {
     private var defaults: [AssociationID: HandlerApplication]
     private let candidates: [HandlerApplication]
+    let installedApplications: [InstalledApplication]
 
     init(arguments: [String] = []) {
         let safari = HandlerApplication(
@@ -33,6 +34,41 @@ final class FixtureWorkspaceClient: WorkspaceClient {
         )
 
         candidates = [safari, preview, arc]
+        installedApplications = [
+            InstalledApplication(
+                url: safari.applicationURL,
+                bundleIdentifier: safari.bundleIdentifier,
+                displayName: safari.displayName,
+                declaredAssociations: [
+                    .urlScheme("http"),
+                    .urlScheme("https"),
+                    .contentType("public.html")
+                ]
+            ),
+            InstalledApplication(
+                url: preview.applicationURL,
+                bundleIdentifier: preview.bundleIdentifier,
+                displayName: preview.displayName,
+                declaredAssociations: [
+                    .contentType("com.adobe.pdf"),
+                    .contentType("public.png"),
+                    .contentType("public.jpeg"),
+                    .contentType("public.heic"),
+                    .contentType("com.compuserve.gif"),
+                    .contentType("public.tiff")
+                ]
+            ),
+            InstalledApplication(
+                url: arc.applicationURL,
+                bundleIdentifier: arc.bundleIdentifier,
+                displayName: arc.displayName,
+                declaredAssociations: [
+                    .urlScheme("http"),
+                    .urlScheme("https"),
+                    .contentType("public.html")
+                ]
+            )
+        ]
         defaults = Dictionary(
             uniqueKeysWithValues:
                 BuiltInAssociationCatalog.descriptors.map {
