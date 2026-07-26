@@ -20,3 +20,33 @@ enum TestApps {
 enum TestError: Error {
     case denied
 }
+
+@MainActor
+final class FakeWorkspaceClient: WorkspaceClient {
+    var defaults: [AssociationID: HandlerApplication] = [:]
+    var candidates: [AssociationID: [HandlerApplication]] = [:]
+    var setErrors: [AssociationID: Error] = [:]
+
+    func defaultApplication(
+        for association: AssociationID
+    ) -> HandlerApplication? {
+        defaults[association]
+    }
+
+    func candidateApplications(
+        for association: AssociationID
+    ) -> [HandlerApplication] {
+        candidates[association] ?? []
+    }
+
+    func setDefaultApplication(
+        _ application: HandlerApplication,
+        for association: AssociationID
+    ) async throws {
+        if let error = setErrors[association] {
+            throw error
+        }
+
+        defaults[association] = application
+    }
+}
