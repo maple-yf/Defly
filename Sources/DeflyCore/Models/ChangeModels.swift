@@ -43,3 +43,50 @@ public struct ChangePlan: Hashable, Sendable, Identifiable {
         self.changes = changes
     }
 }
+
+public struct ChangeItemResult: Sendable, Identifiable {
+    public enum Status: String, Hashable, Sendable {
+        case verified
+        case failed
+        case notApplied
+    }
+
+    public let change: PlannedChange
+    public let status: Status
+    public let errorDescription: String?
+
+    public init(
+        change: PlannedChange,
+        status: Status,
+        errorDescription: String?
+    ) {
+        self.change = change
+        self.status = status
+        self.errorDescription = errorDescription
+    }
+
+    public var id: String {
+        change.id
+    }
+}
+
+public struct ChangeReport: Sendable {
+    public let sourcePlan: ChangePlan
+    public let results: [ChangeItemResult]
+
+    public init(
+        sourcePlan: ChangePlan,
+        results: [ChangeItemResult]
+    ) {
+        self.sourcePlan = sourcePlan
+        self.results = results
+    }
+
+    public func retryPlan() -> ChangePlan {
+        ChangePlan(
+            changes: results
+                .filter { $0.status != .verified }
+                .map(\.change)
+        )
+    }
+}
