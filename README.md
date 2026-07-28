@@ -2,6 +2,10 @@
 
 Defly 是一款原生 macOS 默认应用管理工具，用来查看并安全修改文件类型、UTType 与 URL Scheme 的默认处理应用。
 
+> **Defly** 取自 **Default + fly**：一键搞定默认设置，轻快利落。
+>
+> *Set your defaults simply.*
+
 项目参考 [SwiftDefaultApps](https://github.com/Lord-Kamina/SwiftDefaultApps) 的能力范围，但采用独立 App、现代 Apple 公共 API 和明确的二次确认流程，不读写私有 LaunchServices 数据库。
 
 ## 界面预览
