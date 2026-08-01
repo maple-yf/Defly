@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Sources/DeflyApp/Resources/Assets.xcassets/AppIcon.appiconset/icon_256x256.png" width="128" alt="Defly 应用图标">
+  <img src="docs/images/defly-icon.png" width="128" alt="Defly 应用图标">
 </p>
 
 <h1 align="center">Defly</h1>
