@@ -16,6 +16,29 @@ final class DeflyUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["设置"].exists)
     }
 
+    func testBrandingAppearsInSidebarAndSettings() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-ui-testing", "-reset-preferences"]
+        app.launch()
+
+        XCTAssertTrue(
+            app.staticTexts["Defly"]
+                .waitForExistence(timeout: 3)
+        )
+        XCTAssertTrue(app.staticTexts["轻快管理默认应用"].exists)
+
+        app.staticTexts["设置"].click()
+        XCTAssertTrue(
+            app.staticTexts["关于 Defly"]
+                .waitForExistence(timeout: 3)
+        )
+        XCTAssertTrue(
+            app.staticTexts[
+                "Defly 以开源方式开发，并且只使用 Apple 公共 API。"
+            ].exists
+        )
+    }
+
     func testFileTypeSearchSelectsPDFAndShowsIdentifier() {
         let app = XCUIApplication()
         app.launchArguments = ["-ui-testing", "-use-fixtures"]

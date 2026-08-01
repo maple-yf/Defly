@@ -52,24 +52,33 @@ struct AppShellView: View {
 
     var body: some View {
         NavigationSplitView {
-            List(
-                SidebarDestination.allCases,
-                selection: $selection
-            ) { destination in
-                Label {
-                    Text(
-                        LocalizedStringKey(
-                            destination.localizationKey
+            VStack(spacing: 0) {
+                sidebarBrand
+
+                Divider()
+                    .padding(.horizontal, 12)
+
+                List(
+                    SidebarDestination.allCases,
+                    selection: $selection
+                ) { destination in
+                    Label {
+                        Text(
+                            LocalizedStringKey(
+                                destination.localizationKey
+                            )
                         )
+                    } icon: {
+                        Image(systemName: destination.symbolName)
+                    }
+                    .tag(destination)
+                    .accessibilityIdentifier(
+                        "sidebar.\(destination.rawValue)"
                     )
-                } icon: {
-                    Image(systemName: destination.symbolName)
                 }
-                .tag(destination)
-                .accessibilityIdentifier(
-                    "sidebar.\(destination.rawValue)"
-                )
+                .listStyle(.sidebar)
             }
+            .background(.thinMaterial)
             .navigationSplitViewColumnWidth(
                 min: 190,
                 ideal: 220,
@@ -100,6 +109,29 @@ struct AppShellView: View {
         } message: {
             Text("change.noChanges.message")
         }
+    }
+
+    private var sidebarBrand: some View {
+        HStack(spacing: 11) {
+            DeflyIconView(size: 40)
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(verbatim: "Defly")
+                    .font(.headline)
+                Text("brand.tagline")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.75)
+            }
+
+            Spacer(minLength: 0)
+        }
+        .padding(.horizontal, 14)
+        .padding(.top, 10)
+        .padding(.bottom, 12)
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier("sidebar.brand")
     }
 
     @ViewBuilder

@@ -167,34 +167,48 @@ struct SettingsView: View {
 
     private var aboutCard: some View {
         GlassCard {
-            VStack(alignment: .leading, spacing: 14) {
-                Label(
-                    "settings.about",
-                    systemImage: "info.circle"
-                )
-                .font(.headline)
+            HStack(alignment: .top, spacing: 16) {
+                DeflyIconView(size: 64)
 
-                LabeledContent("settings.version") {
-                    Text(version)
-                        .font(.body.monospacedDigit())
-                }
+                VStack(alignment: .leading, spacing: 9) {
+                    HStack(alignment: .firstTextBaseline) {
+                        Text("settings.about")
+                            .font(.title3.weight(.semibold))
 
-                if let repositoryURL = URL(
-                    string: "https://github.com/maple-yf/Defly"
-                ) {
-                    Link(destination: repositoryURL) {
-                        Label(
-                            "settings.repository",
-                            systemImage: "arrow.up.right.square"
-                        )
+                        Spacer(minLength: 24)
+
+                        HStack(spacing: 6) {
+                            Text("settings.version")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                            Text(version)
+                                .font(.body.monospacedDigit())
+                        }
                     }
-                }
 
-                Text("settings.openSourceDescription")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                    Text("brand.tagline")
+                        .font(.callout)
+                        .foregroundStyle(.secondary)
+
+                    if let repositoryURL = URL(
+                        string: "https://github.com/maple-yf/Defly"
+                    ) {
+                        Link(destination: repositoryURL) {
+                            Label(
+                                "settings.repository",
+                                systemImage: "arrow.up.right.square"
+                            )
+                        }
+                    }
+
+                    Text("settings.openSourceDescription")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+            .accessibilityElement(children: .contain)
+            .accessibilityIdentifier("settings.aboutBrand")
         }
     }
 
@@ -223,7 +237,7 @@ struct SettingsView: View {
     private var version: String {
         Bundle.main.object(
             forInfoDictionaryKey: "CFBundleShortVersionString"
-        ) as? String ?? "0.1.0"
+        ) as? String ?? "0.1.1"
     }
 
     private static func symbolName(

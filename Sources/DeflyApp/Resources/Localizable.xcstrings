@@ -65,6 +65,22 @@
         }
       }
     },
+    "brand.tagline" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set your defaults simply."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "轻快管理默认应用"
+          }
+        }
+      }
+    },
     "change.complete" : {
       "localizations" : {
         "en" : {

@@ -1,22 +1,26 @@
-# Defly
+<p align="center">
+  <img src="Sources/DeflyApp/Resources/Assets.xcassets/AppIcon.appiconset/icon_256x256.png" width="128" alt="Defly 应用图标">
+</p>
+
+<h1 align="center">Defly</h1>
+
+<p align="center"><em>Set your defaults simply.</em></p>
 
 Defly 是一款原生 macOS 默认应用管理工具，用来查看并安全修改文件类型、UTType 与 URL Scheme 的默认处理应用。
 
 > **Defly** 取自 **Default + fly**：一键搞定默认设置，轻快利落。
->
-> *Set your defaults simply.*
 
 项目参考 [SwiftDefaultApps](https://github.com/Lord-Kamina/SwiftDefaultApps) 的能力范围，但采用独立 App、现代 Apple 公共 API 和明确的二次确认流程，不读写私有 LaunchServices 数据库。
 
 ## 界面预览
 
-![Defly 中文概览页，展示浏览器、邮件与固定默认应用](docs/images/defly-overview.png)
+![Defly 中文概览页，左侧显示品牌图标，主界面展示浏览器、邮件与固定默认应用](docs/images/defly-overview.png)
 
-<p align="center"><sub>概览页集中展示常用组合和自定义固定项目；截图使用内置测试数据，不读取本机默认应用。</sub></p>
+<p align="center"><sub>概览页通过侧栏品牌区呈现 Defly 图标，并集中展示常用组合和自定义固定项目；截图使用内置测试数据，不读取本机默认应用。</sub></p>
 
-![Defly 设置页，展示中英文切换和概览固定项目](docs/images/defly-settings.png)
+![Defly 设置页，展示品牌信息、中英文切换和概览固定项目](docs/images/defly-settings.png)
 
-<p align="center"><sub>设置页支持中英文即时切换，并可自由决定概览页显示哪些关联。</sub></p>
+<p align="center"><sub>设置页在“关于 Defly”区域展示应用图标，支持中英文即时切换，并可自由决定概览页显示哪些关联。</sub></p>
 
 ## 功能介绍
 
